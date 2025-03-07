@@ -17,7 +17,7 @@ past_rides = st.number_input("Number of Past Rides", min_value=0, value=10)
 supply_demand_ratio = st.number_input("Supply-Demand Ratio", min_value=0.1, value=1.2)
 
 # API URL (Update if deployed on AWS)
-api_url = "http://44.202.134.243::5000/predict"
+api_url = "http://44.202.134.243:5000/predict"
 
 # Button to make prediction
 if st.button("Predict Price"):
