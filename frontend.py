@@ -37,12 +37,22 @@ if st.button("Predict Price"):
         }
     }
 
-    # Send request to API
-    response = requests.post(api_url, json=payload)
+      # Send request to API
+    try:
+        response = requests.post(api_url, json=payload)
 
-    # Display result
-    if response.status_code == 200:
+        # Debugging: Print API response details
+        st.write("Response Status Code:", response.status_code)
+        st.write("Raw Response Text:", response.text)
+
+        # Check if response is valid JSON
         result = response.json()
-        st.success(f"Predicted Ride Price: ${result['predicted_price']:.2f}")
-    else:
-        st.error(f"Error: {response.json().get('error', 'Unknown error')}")
+        if response.status_code == 200:
+            st.success(f"Predicted Ride Price: ${result['predicted_price']:.2f}")
+        else:
+            st.error(f"Error: {result.get('error', 'Unknown error')}")
+
+    except requests.exceptions.JSONDecodeError:
+        st.error("Error: Invalid JSON response from API. Check backend logs.")
+    except requests.exceptions.RequestException as e:
+        st.error(f"Request Failed: {str(e)}")
