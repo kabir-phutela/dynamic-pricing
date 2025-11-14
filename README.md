@@ -33,7 +33,17 @@ n Web Services)
 
 3) Running the Flask API
 
-   python app.py  
+   python app.py
+   This starts the API at http://127.0.0.1:5000/ (by default). You can call the endpoint /predict with JSON payload to get pricing predictions.
+
+   
+5) Running the Streamlit Frontend
+
+   streamlit run frontend.py  
+
+6. Deployment
+
+   https://dynamic-pricing-kq3u.onrender.com/
 
 
 
