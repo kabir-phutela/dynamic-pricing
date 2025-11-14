@@ -22,13 +22,13 @@ n Web Services)
 ### 1. Clone the Repo  
 
 1) git clone https://github.com/kabir-phutela/dynamic-pricing.git  
-cd dynamic-pricing
+   cd dynamic-pricing
 
 2) Set Up Virtual Environment & Install Dependencies
   
-python3 -m venv venv  
-source venv/bin/activate     # On Windows: venv\Scripts\activate  
-pip install -r requirements.txt  
+   python3 -m venv venv  
+   source venv/bin/activate     # On Windows: venv\Scripts\activate  
+   pip install -r requirements.txt  
 
 
 3) Running the Flask API
